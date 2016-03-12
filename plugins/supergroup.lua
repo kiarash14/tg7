@@ -686,9 +686,9 @@ function get_message_callback(extra, success, result)
 	elseif get_cmd == "setowner" then
 		local group_owner = data[tostring(result.to.peer_id)]['set_owner']
 		if group_owner then
+		local channel_id = 'channel#id'..result.to.peer_id
 			if not is_admin2(tonumber(group_owner)) and not is_support(tonumber(group_owner)) then
-        local channel_id = 'channel#id'..result.to.peer_id
-        local user = "user#id"..group_owner
+				local user = "user#id"..group_owner
 				channel_demote(channel_id, user, ok_cb, false)
 			end
 			local user_id = "user#id"..result.from.peer_id
@@ -1899,7 +1899,7 @@ local function run(msg, matches)
 		end
 
 		if matches[1] == 'help' and not is_owner(msg) then
-			text = "Send a /superhelp to my pv and me help you"
+			text = "Message /superhelp to @Teleseed in private for SuperGroup help"
 			reply_msg(msg.id, text, ok_cb, false)
 		elseif matches[1] == 'help' and is_owner(msg) then
 			local name_log = user_print_name(msg.from)
@@ -2031,5 +2031,3 @@ return {
   run = run,
   pre_process = pre_process
 }
---End supergrpup.lua
---By @Rondoozle
