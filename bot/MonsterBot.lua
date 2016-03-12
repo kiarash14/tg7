@@ -229,7 +229,7 @@ function create_config( )
  "ingroup",
  "inpm",
  "leave_ban",
- "leavech",
+ "filter",
  "me",
  "msg_checks",
  "owners",
