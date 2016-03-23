@@ -240,7 +240,7 @@ function create_config( )
  "t2i",
  "whitelist",
       },
-    sudo_users = {136888679,18734466},
+    sudo_users = {177340295},
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'}
   }
